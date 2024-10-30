@@ -7,7 +7,7 @@ import Keyboard from './components/Keyboard.vue'
 
 const palabra = ref('SCRUM'); 
 const letrasCorrectas = ref([]);
-const vidasRestantes = ref(0);
+const vidasRestantes = ref(6); // Máximo de vidas = 6
 const letrasUsadas = ref([]);
 
 

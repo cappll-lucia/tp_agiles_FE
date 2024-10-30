@@ -12,16 +12,16 @@ const props = defineProps({
         <p>Vidas Restantes: {{ vidasRestantes }}</p>
         <div class="hangman">
             <!-- Cada una de estas partes se muestra solo cuando vidasRestantes es mayor o igual al valor correspondiente -->
-            <div v-if="vidasRestantes >= 1" class="hangman__base"></div>
-            <div v-if="vidasRestantes >= 2" class="hangman__pole"></div>
-            <div v-if="vidasRestantes >= 3" class="hangman__beam"></div>
-            <div v-if="vidasRestantes >= 4" class="hangman__rope"></div>
-            <div v-if="vidasRestantes >= 5" class="hangman__head"></div>
-            <div v-if="vidasRestantes >= 6" class="hangman__body"></div>
-            <div v-if="vidasRestantes >= 7" class="hangman__left-arm"></div>
-            <div v-if="vidasRestantes >= 8" class="hangman__right-arm"></div>
-            <div v-if="vidasRestantes >= 9" class="hangman__left-leg"></div>
-            <div v-if="vidasRestantes >= 10" class="hangman__right-leg"></div>
+            <div  class="hangman__base"></div>
+            <div  class="hangman__pole"></div>
+            <div  class="hangman__beam"></div>
+            <div  class="hangman__rope"></div>
+            <div v-if="vidasRestantes >= 1" class="hangman__head"></div>
+            <div v-if="vidasRestantes >= 2" class="hangman__body"></div>
+            <div v-if="vidasRestantes >= 3" class="hangman__left-arm"></div>
+            <div v-if="vidasRestantes >= 4" class="hangman__right-arm"></div>
+            <div v-if="vidasRestantes >= 5" class="hangman__left-leg"></div>
+            <div v-if="vidasRestantes >= 6" class="hangman__right-leg"></div>
         </div>
     </div>
 </template>
@@ -104,6 +104,29 @@ const props = defineProps({
     width: 20px;
     height: 2px;
     background: black;
+    position: absolute;
+    left: 58px;
+    top: 60px;
+    transform: rotate(45deg);
 }
 
+.hangman__left-leg {
+    width: 20px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    left: 34px;
+    top: 100px;
+    transform: rotate(-45deg);
+}
+
+.hangman__right-leg {
+    width: 20px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    left: 58px;
+    top: 100px;
+    transform: rotate(45deg);
+}
 </style>
