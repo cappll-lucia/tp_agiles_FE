@@ -1,17 +1,14 @@
 <script setup>
 import { ref, defineProps, defineEmits } from 'vue';
 
-// Definición de propiedades y emisión de eventos
-const props = defineProps({
+defineProps({
     letrasUsadas: Array
 });
 
 const emit = defineEmits(['letterGuess']);
 
-// Estado reactivo
 const letras = ref('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''));
 
-// Función para manejar el evento de adivinanza
 function guessLetter(letter) {
     emit('letterGuess', letter);
 }
@@ -29,16 +26,16 @@ function guessLetter(letter) {
 <style scoped>
 .keyboard {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     gap: 10px;
-    max-width: 400px;
+    max-width: 600px;
     margin: 20px auto;
 }
 
 .keyboard__button {
-    padding: 10px;
+    padding: 12px;
     font-size: 1.2em;
-    border: 1px solid #333;
+    border: 1px solid #202327;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
@@ -51,8 +48,8 @@ function guessLetter(letter) {
 }
 
 .keyboard__button:not(:disabled):hover {
-    background-color: #007BFF;
+    background-color: #202327;
     color: #fff;
-    border-color: #007BFF;
+    border-color: #202327;
 }
 </style>
